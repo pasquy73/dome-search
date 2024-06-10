@@ -11,16 +11,7 @@ elasticsearch:
   httpPort: 9200
   transportPort: 9300
 
-  ingress:
-    enabled: false
-    annotations: {}
-    className: "nginx"
-    pathtype: ImplementationSpecific
-    hosts:
-      - host: elasticsearch.local
-        paths:
-          - path: /
-    tls: []
+  esJavaOpts: "-Xms1024m -Xmx1024m"
 
   resources:
     requests:
@@ -42,13 +33,3 @@ elasticsearch:
     periodSeconds: 10
     successThreshold: 3
     timeoutSeconds: 5
-
-  securityContext:
-    runAsUser: null
-
-  podSecurityContext:
-    fsGroup: null
-    runAsUser: null
-
-  sysctlInitContainer:
-    enabled: false
