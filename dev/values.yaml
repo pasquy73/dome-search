@@ -35,5 +35,8 @@ elasticsearch:
   persistence:
     enabled: false
 
+  securityContext:
+    runAsUser: null
+  
   sysctlInitContainer:
    enabled: false
