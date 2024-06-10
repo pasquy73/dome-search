@@ -14,12 +14,6 @@ elasticsearch:
   extraEnvs:
   - name: ES_JAVA_OPTS
     value: -Xms1024m -Xmx1024m
-  - name: cluster.name
-    value: elasticsearch
-  - name: discovery.type
-    value: single-node
-  - name: cluster.initial_master_nodes
-    value: ""
 
   resources:
     requests:
