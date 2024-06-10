@@ -1,8 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-argo-application
+  name: search-engine
   namespace: argocd
+  labels:
+    purpose: search-engine
+
 spec:
   # Every application belongs to a single project
   # If unspecified, an application belongs to the "defalut" project
@@ -12,12 +15,12 @@ spec:
   source:
     repoURL: https://github.com/pasquy73/dome-search.git
     targetRevision: HEAD
-    path: dev
+    path: search
 
   # k8s cluster
   destination: 
     server: https://kubernetes.default.svc # internal service name of k8s api server
-    namespace: myapp
+    namespace: search-engine
 
   syncPolicy:
     syncOptions:
