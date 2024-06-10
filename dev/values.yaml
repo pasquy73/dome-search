@@ -13,10 +13,10 @@ elasticsearch:
 
   resources:
     requests:
-      cpu: "1000m"
-      memory: "2Gi"
+      cpu: "2"
+      memory: "1Gi"
     limits:
-      cpu: "1000m"
+      cpu: "2"
       memory: "2Gi"
 
   volumeClaimTemplate:
@@ -31,6 +31,9 @@ elasticsearch:
     periodSeconds: 10
     successThreshold: 3
     timeoutSeconds: 5
+
+  persistence:
+    enabled: false
 
   sysctlInitContainer:
    enabled: false
