@@ -11,21 +11,6 @@ elasticsearch:
   httpPort: 9200
   transportPort: 9300
 
-  extraEnvs:
-  - name: ES_JAVA_OPTS
-    value: -Xms1024m -Xmx1024m
-
-  ingress:
-    enabled: false
-    annotations: {}
-    className: "nginx"
-    pathtype: ImplementationSpecific
-    hosts:
-      - host: elasticsearch.local
-        paths:
-          - path: /
-    tls: []
-
   resources:
     requests:
       cpu: "1000m"
