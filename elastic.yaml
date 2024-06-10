@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: search-engine
   namespace: argocd
-  labels:
-    purpose: search-engine
+#  labels:
+#    purpose: search-engine
 
 spec:
   # Every application belongs to a single project
