@@ -37,7 +37,7 @@ spec:
           livenessProbe:
             exec:
               command:
-                - curl --silent --fail localhost:9200/_cluster/health || exit 1
+                - curl --silent --fail dome-elasticsearch-svc:9200/_cluster/health || exit 1
             failureThreshold: 5
             periodSeconds: 10
             timeoutSeconds: 10
