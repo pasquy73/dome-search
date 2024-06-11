@@ -3,11 +3,9 @@ kind: Service
 metadata:
   name: dome-search-svc
 spec:
-  type: ClusterIP
-  selector:
-    app.kubernetes.io/instance: dome-search
-    app.kubernetes.io/name: dome-search
   ports:
-    - name: http
+    - name: "8080"
       port: 8080
       targetPort: 8080
+  selector:
+    app: dome-search
