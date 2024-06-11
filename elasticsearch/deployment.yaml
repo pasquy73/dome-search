@@ -43,19 +43,7 @@ spec:
             timeoutSeconds: 10
       hostname: elasticsearch
       restartPolicy: Always
-#      volumes:
-#        - name: elasticsearch-data
-#          persistentVolumeClaim:
-#            claimName: elasticsearch-data
-  volumeClaimTemplates:
-  - metadata:
-      name: elasticsearch-data
-      labels:
-        app.kubernetes.io/instance: dome-elasticsearch
-        app.kubernetes.io/name: dome-elasticsearc
-    spec:
-      accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 1Gi
+      volumes:
+        - name: elasticsearch-data
+          persistentVolumeClaim:
+            claimName: elasticsearch-data
