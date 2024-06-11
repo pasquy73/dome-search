@@ -40,7 +40,8 @@ spec:
               path: /_cluster/health
             initialDelaySeconds: 40
             periodSeconds: 10
-          #securityContext:
+          securityContext:
+            fsGroup: 1000
           #  privileged: true
           #  runAsUser: 1000
       hostname: elasticsearch
