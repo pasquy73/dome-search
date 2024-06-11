@@ -39,5 +39,5 @@ elasticsearch:
   extraEnvs:
   - name: discovery.type
     value: single-node
-  - name: cluster.name
-    value: elasticsearch
+#  - name: cluster.name
+#    value: elasticsearch
