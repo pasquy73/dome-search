@@ -36,7 +36,7 @@ spec:
               name: elasticsearch-data
           livenessProbe:
             httpGet:
-              port: 9200
+              port: http
               path: /_cluster/health
             initialDelaySeconds: 40
             periodSeconds: 10
