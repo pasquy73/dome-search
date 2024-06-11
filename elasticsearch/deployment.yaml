@@ -35,12 +35,14 @@ spec:
             - mountPath: /usr/share/elasticsearch/data
               name: elasticsearch-data
           livenessProbe:
-            exec:
-              command:
-                - curl --silent --fail dome-elasticsearch-svc:9200/_cluster/health || exit 1
-            failureThreshold: 5
+            httpGet:
+              port: 9200
+              path: /_cluster/health
+            initialDelaySeconds: 40
             periodSeconds: 10
-            timeoutSeconds: 10
+          #securityContext:
+          #  privileged: true
+          #  runAsUser: 1000
       hostname: elasticsearch
       restartPolicy: Always
       volumes:
