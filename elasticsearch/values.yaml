@@ -11,6 +11,8 @@ elasticsearch:
   httpPort: 9200
   transportPort: 9300
 
+  esJavaOpts: "-Xms1024m -Xmx1024m"
+
   resources:
     requests:
       cpu: "1000m"
@@ -18,6 +20,8 @@ elasticsearch:
     limits:
       cpu: "1000m"
       memory: "2Gi"
+
+  networkHost: "0.0.0.0"
 
   volumeClaimTemplate:
     accessModes: ["ReadWriteOnce"]
@@ -32,13 +36,3 @@ elasticsearch:
     successThreshold: 3
     timeoutSeconds: 5
 
-  extraInitContainers:
-   - name: file-permissions
-     image: busybox
-     command: ['chown', '-R', '1000:1000', '/usr/share/elasticsearch/']
-     volumeMounts:
-     - mountPath: /usr/share/elasticsearch/data
-       name: elasticsearch-master
-     securityContext:
-       privileged: true
-       runAsUser: 0
