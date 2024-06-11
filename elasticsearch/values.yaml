@@ -5,6 +5,7 @@ elasticsearch:
 
   replicas: 1
   #clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
+  clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
   minimumMasterNodes: 1
 
   protocol: https
