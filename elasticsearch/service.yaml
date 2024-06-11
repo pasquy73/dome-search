@@ -3,6 +3,9 @@ kind: Service
 metadata:
   name: dome-elasticsearch-svc
 spec:
+  selector:
+    app.kubernetes.io/instance: dome-elasticsearch
+    app.kubernetes.io/name: dome-elasticsearch
   ports:
     - name: "9200"
       port: 9200
@@ -10,5 +13,3 @@ spec:
     - name: "9300"
       port: 9300
       targetPort: 9300
-  selector:
-    app: dome-elasticsearch

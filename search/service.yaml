@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: dome-search-svc
 spec:
+  selector:
+    app.kubernetes.io/instance: dome-search
+    app.kubernetes.io/name: dome-search
   ports:
-    - name: "8080"
+    - name: http
       port: 8080
       targetPort: 8080
-  selector:
-    app: dome-search

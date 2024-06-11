@@ -3,18 +3,21 @@ kind: Deployment
 metadata:
   name: dome-search-deployment
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: dome-search
-  replicas: 1
+      app.kubernetes.io/instance: dome-search
+      app.kubernetes.io/name: dome-search
   template:
     metadata:
       labels:
-        app: dome-search
+        app.kubernetes.io/instance: dome-search
+        app.kubernetes.io/name: dome-search
     spec:
       containers:
         - name: search
           image: production.eng.it:8433/dome/search:0.0.6
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
               hostPort: 8080
@@ -32,4 +35,3 @@ spec:
             failureThreshold: 5
             periodSeconds: 10
             timeoutSeconds: 10
-          resources: {}
