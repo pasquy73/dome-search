@@ -5,7 +5,7 @@ elasticsearch:
 
   replicas: 1
   minimumMasterNodes: 1
-  clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s'
+  clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
 
   protocol: https
   httpPort: 9200
@@ -22,17 +22,14 @@ elasticsearch:
       memory: "2Gi"
 
   networkHost: "0.0.0.0"
-  discovery.seed_hosts : []
-  cluster.initial_master_nodes : []
+  discovery.seed_hosts: []
+  cluster.initial_master_nodes: []
 
   volumeClaimTemplate:
     accessModes: ["ReadWriteOnce"]
     resources:
       requests:
         storage: "5Gi"
-  
-  sysctlInitContainer:
-    enabled: false
 
   readinessProbe:
     failureThreshold: 3
@@ -41,6 +38,16 @@ elasticsearch:
     successThreshold: 3
     timeoutSeconds: 5
 
+  extraInitContainers:
+    - name: file-permissions
+      image: busybox
+      command: ["chown", "-R", "1000:1000", "/usr/share/elasticsearch/"]
+      volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: elasticsearch-master
+      securityContext:
+        privileged: true
+        runAsUser: 0
 #  extraEnvs:
 #  - name: discovery.type
 #    value: single-node
