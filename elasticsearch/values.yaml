@@ -11,20 +11,6 @@ elasticsearch:
   httpPort: 9200
   transportPort: 9300
 
-  nameOverride: "dome-elasticsearch-svc"
-  fullnameOverride: ""
-  healthNameOverride: ""
-
-  esJavaOpts: "-Xms1024m -Xmx1024m"
-
-  #  extraEnvs:
-  #  - name: ES_JAVA_OPTS
-  #    value: -Xms1024m -Xmx1024m
-  #  - name: cluster.name
-  #    value: elasticsearch
-  #  - name: discovery.type
-  #    value: single-node
-
   resources:
     requests:
       cpu: "1000m"
@@ -38,33 +24,6 @@ elasticsearch:
     resources:
       requests:
         storage: "5Gi"
-
-  podSecurityPolicy:
-    create: false
-    name: ""
-    spec:
-      privileged: true
-      fsGroup:
-        rule: RunAsAny
-      runAsUser:
-        rule: RunAsAny
-      seLinux:
-        rule: RunAsAny
-      supplementalGroups:
-        rule: RunAsAny
-      volumes:
-        - persistentVolumeClaim
-
-  extraInitContainers:
-    - name: file-permissions
-      image: busybox
-      command: ["chown", "-R", "1000:1000", "/usr/share/elasticsearch/"]
-      volumeMounts:
-        - mountPath: /usr/share/elasticsearch/data
-          name: elasticsearch-master
-      securityContext:
-        privileged: true
-        runAsUser: 0
 
   readinessProbe:
     failureThreshold: 3
