@@ -22,6 +22,8 @@ elasticsearch:
       memory: "2Gi"
 
   networkHost: "0.0.0.0"
+  discovery.seed_hosts : []
+  cluster.initial_master_nodes : []
 
   volumeClaimTemplate:
     accessModes: ["ReadWriteOnce"]
@@ -36,8 +38,8 @@ elasticsearch:
 #    successThreshold: 3
 #    timeoutSeconds: 5
 
-  extraEnvs:
-  - name: discovery.type
-    value: single-node
+#  extraEnvs:
+#  - name: discovery.type
+#    value: single-node
 #  - name: cluster.name
 #    value: elasticsearch
