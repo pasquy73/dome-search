@@ -35,21 +35,12 @@ spec:
             - mountPath: /usr/share/elasticsearch/data
               name: elasticsearch-data
           livenessProbe:
-            httpGet:
-              port: 9200
-              path: /_cluster/health
-            initialDelaySeconds: 40
+            exec:
+              command:
+                - curl --silent --fail localhost:9200/_cluster/health || exit 1
+            failureThreshold: 5
             periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /_cluster/health
-              port: 9200
-            initialDelaySeconds: 30
-            timeoutSeconds: 10 
-          securityContext:
-            fsGroup: 1000
-          #  privileged: true
-          #  runAsUser: 1000
+            timeoutSeconds: 10
       hostname: elasticsearch
       restartPolicy: Always
       volumes:
