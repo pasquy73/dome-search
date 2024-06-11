@@ -4,8 +4,6 @@ elasticsearch:
   imagePullPolicy: "IfNotPresent"
 
   replicas: 1
-  #clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
-  clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
   minimumMasterNodes: 1
 
   protocol: https
@@ -41,9 +39,11 @@ elasticsearch:
         privileged: true
         runAsUser: 0
 
+  clusterHealthCheckParams: "wait_for_status=yellow&timeout=50s"
+  
   readinessProbe:
     failureThreshold: 3
-    initialDelaySeconds: 60
+    initialDelaySeconds: 120
     periodSeconds: 10
     successThreshold: 3
     timeoutSeconds: 5
