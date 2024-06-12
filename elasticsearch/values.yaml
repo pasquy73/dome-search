@@ -25,12 +25,12 @@ elasticsearch:
       requests:
         storage: "5Gi"
 
-  readinessProbe:
-    failureThreshold: 3
-    initialDelaySeconds: 60
-    periodSeconds: 10
-    successThreshold: 3
-    timeoutSeconds: 5
+#  readinessProbe:
+#    failureThreshold: 3
+#    initialDelaySeconds: 60
+#    periodSeconds: 10
+#    successThreshold: 3
+#    timeoutSeconds: 5
 
   #  persistence:
   #    enabled: false
