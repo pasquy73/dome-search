@@ -32,15 +32,15 @@ elasticsearch:
     successThreshold: 3
     timeoutSeconds: 5
 
-  persistence:
-    enabled: false
+#  persistence:
+#    enabled: false
 
-  podSecurityContext:
-    fsGroup: null
-    runAsUser: null
+#  podSecurityContext:
+#    fsGroup: null
+#    runAsUser: null
 
-  sysctlInitContainer:
-    enabled: false
+#  sysctlInitContainer:
+#    enabled: false
 
   extraEnvs:
   - name: discovery.type
