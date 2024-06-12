@@ -33,7 +33,6 @@ spec:
               value: single-node
             - name: network.host
               value: "0.0.0.0"
-          #command: ["chown", "-R", "1000:1000", "/usr/share/elasticsearch/"]
           volumeMounts:
             - mountPath: /usr/share/elasticsearch/data
               name: elasticsearch-data
@@ -48,6 +47,8 @@ spec:
             timeoutSeconds: 10
       hostname: elasticsearch
       restartPolicy: Always
+      securityContext:
+        fsGroup: 1000
       volumes:
         - name: elasticsearch-data
           persistentVolumeClaim:
