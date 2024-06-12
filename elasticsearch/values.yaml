@@ -4,7 +4,7 @@ elasticsearch:
   imagePullPolicy: "IfNotPresent"
 
   replicas: 1
-  clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
+  clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
   minimumMasterNodes: 1
 
   protocol: https
@@ -25,12 +25,21 @@ elasticsearch:
       requests:
         storage: "5Gi"
 
-#  readinessProbe:
-#    failureThreshold: 3
-#    initialDelaySeconds: 60
-#    periodSeconds: 10
-#    successThreshold: 3
-#    timeoutSeconds: 5
+  networkHost: "0.0.0.0"
+
+  readinessProbe:
+    failureThreshold: 3
+    initialDelaySeconds: 60
+    periodSeconds: 10
+    successThreshold: 3
+    timeoutSeconds: 5
+
+  persistence:
+    enabled: true
+    labels:
+      # Add default labels for the volumeClaimTemplate of the StatefulSet
+      enabled: false
+    annotations: {}
 
   #  persistence:
   #    enabled: false
