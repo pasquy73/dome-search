@@ -31,3 +31,18 @@ elasticsearch:
     periodSeconds: 10
     successThreshold: 3
     timeoutSeconds: 5
+
+  persistence:
+    enabled: false
+
+  # Openshift overrides
+  # https://github.com/elastic/helm-charts/tree/master/elasticsearch/examples/openshift
+  securityContext:
+    runAsUser: null
+
+  podSecurityContext:
+    fsGroup: null
+    runAsUser: null
+
+  sysctlInitContainer:
+    enabled: false
