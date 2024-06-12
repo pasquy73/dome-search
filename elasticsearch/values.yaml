@@ -38,7 +38,7 @@ elasticsearch:
   # Openshift overrides
   # https://github.com/elastic/helm-charts/tree/master/elasticsearch/examples/openshift
   securityContext:
-    runAsUser: null
+    runAsUser: 999
 
   podSecurityContext:
     fsGroup: null
