@@ -1,10 +1,10 @@
 elasticsearch:
   image: "docker.elastic.co/elasticsearch/elasticsearch"
-  imageTag: "7.17.3"
+  imageTag: "8.5.3"
   imagePullPolicy: "IfNotPresent"
 
   replicas: 1
-  clusterHealthCheckParams: "wait_for_status=green&timeout=200s"
+#  clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
   minimumMasterNodes: 1
 
   protocol: https
@@ -48,8 +48,8 @@ elasticsearch:
   #    fsGroup: null
   #    runAsUser: null
 
-  #  sysctlInitContainer:
-  #    enabled: false
+#  sysctlInitContainer:
+#    enabled: false
 
   esJavaOpts: "-Xms1024m -Xmx1024m"
 
