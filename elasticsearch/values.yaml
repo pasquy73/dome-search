@@ -46,4 +46,4 @@ elasticsearch:
   - name: discovery.type
     value: single-node
   - name: cluster.initial_master_nodes
-    value: ""
+    value: null
