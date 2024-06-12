@@ -32,20 +32,33 @@ elasticsearch:
     successThreshold: 3
     timeoutSeconds: 5
 
-#  persistence:
-#    enabled: false
+  #  persistence:
+  #    enabled: false
 
-#  podSecurityContext:
-#    fsGroup: null
-#    runAsUser: null
+  #  podSecurityContext:
+  #    fsGroup: null
+  #    runAsUser: null
 
-#  sysctlInitContainer:
-#    enabled: false
+  #  sysctlInitContainer:
+  #    enabled: false
 
-  extraEnvs:
-  - name: discovery.type
-    value: single-node
-  - name: seed_hosts
-    value: ""
-  - name: cluster.initial_master_nodes
-    value: null
+  esJavaOpts: "-Xms1024m -Xmx1024m"
+
+  extraInitContainers:
+    - name: file-permissions
+      image: busybox
+      command: ["chown", "-R", "1000:1000", "/usr/share/elasticsearch/"]
+      volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: elasticsearch-master
+      securityContext:
+        privileged: true
+        runAsUser: 0
+
+#  extraEnvs:
+#    - name: discovery.type
+#      value: single-node
+#    - name: seed_hosts
+#      value: ""
+#    - name: cluster.initial_master_nodes
+#      value: null
