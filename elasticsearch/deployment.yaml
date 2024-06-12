@@ -38,9 +38,11 @@ spec:
             - mountPath: /usr/share/elasticsearch/data
               name: elasticsearch-data
           livenessProbe:
-            exec:
-              command:
-                - curl --silent --fail localhost:9200/_cluster/health || exit 1
+            httpGet:
+              path: /_cluster/health
+              port: 9200
+              scheme: HTTP
+            initialDelaySeconds: 10
             failureThreshold: 5
             periodSeconds: 10
             timeoutSeconds: 10
