@@ -1,12 +1,12 @@
-apiVersion: v1
-description: Official Elastic helm chart for Elasticsearch
-home: https://github.com/elastic/helm-charts
-maintainers:
-  - email: helm-charts@elastic.co
-    name: Elastic
+apiVersion: v2
 name: elasticsearch
+description: Chart holder for argo-cd
+
+type: application
 version: 7.17.3
-appVersion: 7.17.3
-sources:
-  - https://github.com/elastic/elasticsearch
-icon: https://helm.elastic.co/icons/elasticsearch.png
+appVersion: "7.17.3"
+
+dependencies:
+  - name: elasticsearch
+    version: 7.17.3
+    repository: https://helm.elastic.co
