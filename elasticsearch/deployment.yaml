@@ -34,8 +34,6 @@ spec:
             - name: network.host
               value: "0.0.0.0"
           #command: ["chown", "-R", "1000:1000", "/usr/share/elasticsearch/"]
-          command:
-            - ls -al
           volumeMounts:
             - mountPath: /usr/share/elasticsearch/data
               name: elasticsearch-data
