@@ -68,7 +68,7 @@ elasticsearch:
   #        privileged: true
   #        runAsUser: 0
 
-  roles: []
+  #roles: []
   extraEnvs:
     - name: discovery.type
       value: single-node
