@@ -39,7 +39,7 @@ elasticsearch:
     timeoutSeconds: 5
 
   sysctlInitContainer:
-    enabled: false
+    enabled: true
 
   antiAffinity: "soft"
 
@@ -47,8 +47,15 @@ elasticsearch:
     runAsUser: 999
 
   podSecurityContext:
-    fsGroup: null
-    runAsUser: null
+    fsGroup: 1000
+    runAsUser: 1000
+
+  persistence:
+    enabled: true
+    labels:
+      # Add default labels for the volumeClaimTemplate of the StatefulSet
+      enabled: false
+    annotations: {}
 
 #  extraInitContainers:
 #    - name: file-permissions
