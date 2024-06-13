@@ -5,7 +5,7 @@ elasticsearch:
 
   replicas: 1
   minimumMasterNodes: 1
-  clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
+  clusterHealthCheckParams: "wait_for_status=yellow&timeout=50s"
 
   protocol: https
   httpPort: 9200
@@ -33,7 +33,7 @@ elasticsearch:
 
   readinessProbe:
     failureThreshold: 3
-    initialDelaySeconds: 60
+    initialDelaySeconds: 120
     periodSeconds: 10
     successThreshold: 3
     timeoutSeconds: 5
