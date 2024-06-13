@@ -57,32 +57,32 @@ elasticsearch:
       enabled: false
     annotations: {}
 
-#  extraInitContainers:
-#    - name: file-permissions
-#      image: busybox
-#      command: ["chown", "-R", "1000:1000", "/usr/share/elasticsearch/"]
-#      volumeMounts:
-#        - mountPath: /usr/share/elasticsearch/data
-#          name: elasticsearch-master
-#      securityContext:
-#        privileged: true
-#        runAsUser: 0
+  #  extraInitContainers:
+  #    - name: file-permissions
+  #      image: busybox
+  #      command: ["chown", "-R", "1000:1000", "/usr/share/elasticsearch/"]
+  #      volumeMounts:
+  #        - mountPath: /usr/share/elasticsearch/data
+  #          name: elasticsearch-master
+  #      securityContext:
+  #        privileged: true
+  #        runAsUser: 0
 
   roles: []
   extraEnvs:
-  - name: discovery.type
-    value: single-node
-#  - name: node.master
-#    value: 'false'
-#  - name: node.data
-#    value: 'false'
-#  - name: node.ingest
-#    value: 'false'
-#  - name: node.ml
-#    value: 'false'
-#  - name: node.remote_cluster_client
-#    value: 'false'
-  - name: node.roles
-    value: master,data,data_content,data_hot,data_warm,data_cold,ingest,ml,remote_cluster_client,transform
+    - name: discovery.type
+      value: single-node
+    #  - name: node.master
+    #    value: 'false'
+    #  - name: node.data
+    #    value: 'false'
+    #  - name: node.ingest
+    #    value: 'false'
+    #  - name: node.ml
+    #    value: 'false'
+    #  - name: node.remote_cluster_client
+    #    value: 'false'
+    - name: node.roles
+      value: master,data,data_content,data_hot,data_warm,data_cold,ingest,ml,remote_cluster_client,transform
 #  - name: cluster.name
 #    value: elasticsearch
