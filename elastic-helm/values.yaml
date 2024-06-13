@@ -1,6 +1,6 @@
 elasticsearch:
   image: "docker.elastic.co/elasticsearch/elasticsearch"
-  imageTag: "7.17.3"
+  imageTag: "8.5.3"
   imagePullPolicy: "IfNotPresent"
 
   replicas: 1
@@ -68,18 +68,18 @@ elasticsearch:
   #        privileged: true
   #        runAsUser: 0
 
-  roles:
-    master: "true"
-    ingest: "true"
-    data: "true"
-    remote_cluster_client: "true"
-    ml: "true"
+#  roles:
+#    master: "true"
+#    ingest: "true"
+#    data: "true"
+#    remote_cluster_client: "true"
+#    ml: "true"
 
-  cluster.initial_master_nodes : []
-  
-  extraEnvs:
-    - name: discovery.type
-      value: single-node
+#  cluster.initial_master_nodes : []
+
+#  extraEnvs:
+#    - name: discovery.type
+#      value: single-node
 #    - name: node.master
 #      value: 'false'
 #  - name: node.data
