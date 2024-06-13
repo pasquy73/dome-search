@@ -38,6 +38,18 @@ elasticsearch:
     successThreshold: 3
     timeoutSeconds: 5
 
+  sysctlInitContainer:
+    enabled: false
+
+  antiAffinity: "soft"
+
+  securityContext:
+    runAsUser: null
+
+  podSecurityContext:
+    fsGroup: null
+    runAsUser: null
+
 #  extraInitContainers:
 #    - name: file-permissions
 #      image: busybox
