@@ -75,6 +75,8 @@ elasticsearch:
     remote_cluster_client: "true"
     ml: "true"
 
+  cluster.initial_master_nodes : []
+  
   extraEnvs:
     - name: discovery.type
       value: single-node
