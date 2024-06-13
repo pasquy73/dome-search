@@ -71,9 +71,9 @@ elasticsearch:
   extraEnvs:
   - name: discovery.type
     value: single-node
-  - name: discovery.type
-    value: node.data
-  - name: 'false'
+  - name: node.data
+    value: 'false'
+  - name: node.roles
     value: master,data,data_content,data_hot,data_warm,data_cold,ingest,ml,remote_cluster_client,transform
 #  - name: cluster.name
 #    value: elasticsearch
