@@ -44,7 +44,7 @@ elasticsearch:
   antiAffinity: "soft"
 
   securityContext:
-    runAsUser: null
+    runAsUser: 999
 
   podSecurityContext:
     fsGroup: null
