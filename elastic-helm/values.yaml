@@ -68,8 +68,8 @@ elasticsearch:
 #        privileged: true
 #        runAsUser: 0
 
-#  extraEnvs:
-#  - name: discovery.type
-#    value: single-node
+  extraEnvs:
+  - name: discovery.type
+    value: single-node
 #  - name: cluster.name
 #    value: elasticsearch
