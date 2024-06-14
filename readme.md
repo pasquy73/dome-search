@@ -1,13 +1,5 @@
 # Release Notes
 
-**Release Notes** for the *Search*:
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 20" background="#04AA6D">
-    <text x="0" y="15" fill="#4285f4">1</text>
-    <text x="6" y="15" fill="#4285f4">.</text>
-    <text x="10" y="15" fill="#ea4335">0</text>
-    <text x="18" y="15" fill="#4285f4">.</text>
-</svg>
 
 > [!NOTE]  
 > Highlights information that users should take into account, even when skimming.
@@ -28,3 +20,16 @@
 **Improvement**
 * Upgrade the *Search* with `Elasticsearch` to **8.5.1**.
 * Update docker-compose files (*elasticsearch.yaml* and *search-compose.yaml*).
+
+
+<details>
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+You can add text within a collapsed section. 
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+</details>
