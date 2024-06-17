@@ -34,8 +34,16 @@ em { font-style: normal; font-weight: bold; } //italic emphasis
 s { color: green }
 em { color: blue }
 
-~~This is green~~
-_this is blue_
+<div class="normal">
+    <h1><code>font-style:normal;</code> <small>- Always non-ital</small></h1>
+    <p>Should not be ital: <em>Foo</em></p>
+    <p class="ital">Should be ital: <em>Foo</em></p>
+</div>
+<div class="inherit">
+    <h1><code>font-style:inherit;</code> <small>- Inherits from parent</small></h1>
+    <p>Should not be ital: <em>Foo</em></p>
+    <p class="ital">Should be ital: <em>Foo</em></p>
+</div>
 
 **Improvement**
 * Upgrade the *Search* with `Elasticsearch` to **8.5.1**.
