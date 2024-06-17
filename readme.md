@@ -25,25 +25,8 @@
 
 markdown-heading
 
-Applying blue class to text:
+### <span>${\fcolorbox{#FF9933}0.1.0}$</span>
 
-This is a paragraph that for some reason we want blue.
-{: .blue}
-Applying blue class to headings:
-
-#### A blue heading
-{: .blue}
-Applying two classes:
-
-A blue and bold paragraph.
-{: .blue .bold}
-Applying ids:
-
-#### A blue heading
-{: .blue #blue-h}
-This produces:
-
-<h4 class="blue" id="blue-h">A blue heading</h4>
 
 **Improvement**
 * Upgrade the *Search* with `Elasticsearch` to **8.5.1**.
