@@ -4,14 +4,12 @@ elasticsearch:
   imagePullPolicy: "IfNotPresent"
 
   replicas: 1
+  clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
   minimumMasterNodes: 1
-  clusterHealthCheckParams: "wait_for_status=yellow&timeout=50s"
 
   protocol: https
   httpPort: 9200
   transportPort: 9300
-
-  esJavaOpts: "-Xms1024m -Xmx1024m"
 
   resources:
     requests:
@@ -21,76 +19,15 @@ elasticsearch:
       cpu: "1000m"
       memory: "2Gi"
 
-  networkHost: "0.0.0.0"
-  #discovery.seed_hosts: []
-  #cluster.initial_master_nodes: []
-
   volumeClaimTemplate:
     accessModes: ["ReadWriteOnce"]
     resources:
       requests:
         storage: "5Gi"
 
-#  readinessProbe:
-#    failureThreshold: 3
-#    initialDelaySeconds: 120
-#    periodSeconds: 10
-#    successThreshold: 3
-#    timeoutSeconds: 5
-
-#  sysctlInitContainer:
-#    enabled: true
-
-#  antiAffinity: "soft"
-
-#  securityContext:
-#    runAsUser: 999
-
-#  podSecurityContext:
-#    fsGroup: 1000
-#    runAsUser: 1000
-
-#  persistence:
-#    enabled: true
-#    labels:
-      # Add default labels for the volumeClaimTemplate of the StatefulSet
-#      enabled: false
-#    annotations: {}
-
-  #  extraInitContainers:
-  #    - name: file-permissions
-  #      image: busybox
-  #      command: ["chown", "-R", "1000:1000", "/usr/share/elasticsearch/"]
-  #      volumeMounts:
-  #        - mountPath: /usr/share/elasticsearch/data
-  #          name: elasticsearch-master
-  #      securityContext:
-  #        privileged: true
-  #        runAsUser: 0
-
-#  roles:
-#    master: "true"
-#    ingest: "true"
-#    data: "true"
-#    remote_cluster_client: "true"
-#    ml: "true"
-
-#  cluster.initial_master_nodes : []
-
-  extraEnvs:
-    - name: discovery.type
-      value: single-node
-    - name: cluster.name
-      value: elasticsearch
-    - name: xpack.security.http.ssl.enabled
-      value: 'false'
-    - name: ELASTIC_USERNAME
-      value: elastic
-    - name: ELASTIC_PASSWORD
-      value: dome_2024!
-#  - name: node.remote_cluster_client
-#    value: 'false'
-#- name: node.roles
-#  value: master,data,data_content,data_hot,data_warm,data_cold,ingest,ml,remote_cluster_client,transform
-#  - name: cluster.name
-#    value: elasticsearch
+  readinessProbe:
+    failureThreshold: 3
+    initialDelaySeconds: 60
+    periodSeconds: 10
+    successThreshold: 3
+    timeoutSeconds: 5
