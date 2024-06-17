@@ -21,7 +21,6 @@
 ### <span>${\color{#04AA6D}0.1.0}$</span>
 
 
-### <span>${\colorbox{lightGreen}0.1.0}$</span>
 
 
 
