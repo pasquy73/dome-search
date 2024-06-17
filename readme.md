@@ -24,7 +24,7 @@
 
 ### ${\textsf{\color{lightgreen}Green}}$
 
-### <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><text x="10" y="30" fill="green" font-family="Arial">Green</text></svg>
+### $\color{lightblue}{\textrm{Red Nimetaga 3 kõige suuremat pilveteenuste pakkujat}}$  
 
 **Improvement**
 * Upgrade the *Search* with `Elasticsearch` to **8.5.1**.
