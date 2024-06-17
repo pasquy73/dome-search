@@ -21,8 +21,7 @@
 $${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 
 <span>$${\color{bule}0.1.0}$$</span>
-
-## $\colorbox{green}{{\color{white}{This\ is\ a\ Big\ Title}}}$
+### <span>$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$</span>
 
 ### <span style="background-color: #04AA6D; color: white; font-size: 16px; padding: 4px 8px; border-radius: 8px;">1.0.0</span> 
 **Improvement**
