@@ -25,25 +25,17 @@
 
 markdown-heading
 
-<span style="color:red">some **This is Red Bold.** text</span>
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
 
-<font color='red'>test blue color font</font>
+# TODOs:
 
-<strong style="color: red; opacity: 0.80;">My Bold Text, in red color.</strong>
-
-sono qua
-
-a[href='red'] {
-    color: red;
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
-}
-[Look, ma! Red!](red)
-
-#### A blue heading
-{: .blue}
-
+- <r>TODO:</r> Important thing to do
+- <o>TODO:</o> Less important thing to do
+- <g>DONE:</g> Breath deeply and improve karma
 
 **Improvement**
 * Upgrade the *Search* with `Elasticsearch` to **8.5.1**.
