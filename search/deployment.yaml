@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: search
-          image: production.eng.it:8433/dome/search:0.0.6
+          image: production.eng.it:8433/dome/search:0.1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
