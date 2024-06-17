@@ -25,8 +25,17 @@
 
 markdown-heading
 
-<strong style="color: red; opacity: 0.80;">My Bold Text, in red color.</strong>
+// resets
+s { text-decoration:none; } //strike-through
+em { font-style: normal; font-weight: bold; } //italic emphasis
 
+
+// colors
+s { color: green }
+em { color: blue }
+
+~~This is green~~
+_this is blue_
 
 **Improvement**
 * Upgrade the *Search* with `Elasticsearch` to **8.5.1**.
