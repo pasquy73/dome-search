@@ -25,7 +25,7 @@
 
 markdown-heading
 
-<font color='red'>test blue color font</font>
+<strong style="color: red; opacity: 0.80;">My Bold Text, in red color.</strong>
 
 
 **Improvement**
