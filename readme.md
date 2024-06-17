@@ -18,12 +18,14 @@
 
 <code style="color : blue">0.1.0</code>
 
-# ${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$
-
-### <span>${\color{blue}0.1.0}$</span>
+### <span>${\color{#04AA6D}0.1.0}$</span>
 
 
-### <span style="background-color: #04AA6D; color: white; font-size: 16px; padding: 4px 8px; border-radius: 8px;">1.0.0</span> 
+### <span>${\colorbox{lightGreen}0.1.0}$</span>
+
+
+
+
 **Improvement**
 * Upgrade the *Search* with `Elasticsearch` to **8.5.1**.
 * Update docker-compose files (*elasticsearch.yaml* and *search-compose.yaml*).
