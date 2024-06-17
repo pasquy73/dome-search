@@ -31,31 +31,31 @@ elasticsearch:
       requests:
         storage: "5Gi"
 
-  readinessProbe:
-    failureThreshold: 3
-    initialDelaySeconds: 120
-    periodSeconds: 10
-    successThreshold: 3
-    timeoutSeconds: 5
+#  readinessProbe:
+#    failureThreshold: 3
+#    initialDelaySeconds: 120
+#    periodSeconds: 10
+#    successThreshold: 3
+#    timeoutSeconds: 5
 
-  sysctlInitContainer:
-    enabled: true
+#  sysctlInitContainer:
+#    enabled: true
 
-  antiAffinity: "soft"
+#  antiAffinity: "soft"
 
-  securityContext:
-    runAsUser: 999
+#  securityContext:
+#    runAsUser: 999
 
-  podSecurityContext:
-    fsGroup: 1000
-    runAsUser: 1000
+#  podSecurityContext:
+#    fsGroup: 1000
+#    runAsUser: 1000
 
-  persistence:
-    enabled: true
-    labels:
+#  persistence:
+#    enabled: true
+#    labels:
       # Add default labels for the volumeClaimTemplate of the StatefulSet
-      enabled: false
-    annotations: {}
+#      enabled: false
+#    annotations: {}
 
   #  extraInitContainers:
   #    - name: file-permissions
