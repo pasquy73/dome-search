@@ -19,6 +19,8 @@ elasticsearch:
       cpu: "1000m"
       memory: "2Gi"
 
+  networkHost: "0.0.0.0"
+
   volumeClaimTemplate:
     accessModes: ["ReadWriteOnce"]
     resources:
@@ -33,8 +35,6 @@ elasticsearch:
     timeoutSeconds: 5
 
   extraEnvs:
-    - name: discovery.type
-      value: single-node
     - name: cluster.name
       value: elasticsearch
     - name: xpack.security.http.ssl.enabled
