@@ -7,9 +7,9 @@ elasticsearch:
   clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
   minimumMasterNodes: 1
 
-  protocol: https
+  protocol: http
   httpPort: 9200
-  transportPort: 9300
+  #transportPort: 9300
 
   resources:
     requests:
@@ -33,8 +33,8 @@ elasticsearch:
     timeoutSeconds: 5
 
   extraEnvs:
-  #  - name: discovery.type
-  #    value: single-node
+    - name: discovery.type
+      value: single-node
     - name: cluster.name
       value: elasticsearch
     - name: xpack.security.http.ssl.enabled
