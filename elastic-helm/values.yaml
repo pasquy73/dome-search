@@ -77,17 +77,17 @@ elasticsearch:
 
 #  cluster.initial_master_nodes : []
 
-#  extraEnvs:
-#    - name: discovery.type
-#      value: single-node
-#    - name: node.master
-#      value: 'false'
-#  - name: node.data
-#    value: 'false'
-#  - name: node.ingest
-#    value: 'false'
-#  - name: node.ml
-#    value: 'false'
+  extraEnvs:
+    - name: discovery.type
+      value: single-node
+    - name: cluster.name
+      value: elasticsearch
+    - name: xpack.security.http.ssl.enabled
+      value: 'false'
+    - name: ELASTIC_USERNAME
+      value: elastic
+    - name: ELASTIC_PASSWORD
+      value: dome_2024!
 #  - name: node.remote_cluster_client
 #    value: 'false'
 #- name: node.roles
