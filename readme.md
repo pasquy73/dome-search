@@ -25,7 +25,7 @@
 
 markdown-heading
 
-### <span>${\fcolorbox{#FF9933}0.1.0}$</span>
+### <span>${\colorbox{#FF9933}0.1.0}$</span>
 
 
 **Improvement**
