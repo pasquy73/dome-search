@@ -23,8 +23,26 @@
 ### <code>0.1.0</code>
 
 
+markdown-heading
 
+<span style="color:red">some **This is Red Bold.** text</span>
 
+<font color='red'>test blue color font</font>
+
+<strong style="color: red; opacity: 0.80;">My Bold Text, in red color.</strong>
+
+sono qua
+
+a[href='red'] {
+    color: red;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+}
+[Look, ma! Red!](red)
+
+#### A blue heading
+{: .blue}
 
 
 **Improvement**
