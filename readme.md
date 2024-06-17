@@ -22,28 +22,7 @@
 
 ### <code>0.1.0</code>
 
-
-markdown-heading
-
-// resets
-s { text-decoration:none; } //strike-through
-em { font-style: normal; font-weight: bold; } //italic emphasis
-
-
-// colors
-s { color: green }
-em { color: blue }
-
-<div class="normal">
-    <h1><code>font-style:normal;</code> <small>- Always non-ital</small></h1>
-    <p>Should not be ital: <em>Foo</em></p>
-    <p class="ital">Should be ital: <em>Foo</em></p>
-</div>
-<div class="inherit">
-    <h1><code>font-style:inherit;</code> <small>- Inherits from parent</small></h1>
-    <p>Should not be ital: <em>Foo</em></p>
-    <p class="ital">Should be ital: <em>Foo</em></p>
-</div>
+### ${\textsf{\color{lightgreen}Green}}$
 
 **Improvement**
 * Upgrade the *Search* with `Elasticsearch` to **8.5.1**.
