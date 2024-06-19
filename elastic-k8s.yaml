@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: elasticsearch
+  namespace: argocd
+  labels:
+    purpose: search-engine
+
+spec:
+  # Every application belongs to a single project
+  # If unspecified, an application belongs to the "defalut" project
+  project: default
+
+  # Git repository (track and sync)
+  source:
+    repoURL: https://github.com/pasquy73/dome-search.git
+    targetRevision: HEAD
+    path: elastic-k8s
+
+  # k8s cluster
+  destination: 
+    server: https://kubernetes.default.svc # internal service name of k8s api server
+    namespace: search-engine
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    # enable automatic sync
+    automated:
+      selfHeal: true
+      prune: true
