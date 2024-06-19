@@ -46,9 +46,9 @@ spec:
             failureThreshold: 5
             periodSeconds: 10
             timeoutSeconds: 10
-      initContainers:
-        - name: chown-data-volumes
-          command: ["sh", "-c", "chown root:root /usr/share/elasticsearch/data"]
+#      initContainers:
+#        - name: chown-data-volumes
+#          command: ["sh", "-c", "chown elasticsearch:elasticsearch /usr/share/elasticsearch/data"]
       hostname: elasticsearch
       restartPolicy: Always
       securityContext:
