@@ -48,9 +48,9 @@ spec:
             timeoutSeconds: 10
       securityContext:
           privileged: true
-          runAsUser: 33
-          runAsGroup: 33
-          fsGroup: 33
+          runAsUser: 1000
+          runAsGroup: 1000
+          fsGroup: 1000
       hostname: elasticsearch
       restartPolicy: Always       
       volumes:
