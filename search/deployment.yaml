@@ -36,7 +36,7 @@ spec:
             - name: TMFORUM_URL
               value: https://dome-dev.eng.it/tmf-api
             - name: BAE_URL
-              value: https://dome-marketplace.org
+              value: https://dome-marketplace-sbx.org
             - name: LOG_LEVEL
               value: DEBUG
           livenessProbe:
