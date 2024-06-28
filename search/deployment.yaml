@@ -31,18 +31,18 @@ spec:
               value: "0.0.0.0"
             - name: ELASTIC_USERNAME
               valueFrom:
-                configMapKeyRef:
-                  name: elastic-mapconfig
+                secretKeyRef:
+                  name: elastic-secret
                   key: username
             - name: ELASTIC_PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: elastic-mapconfig
+                secretKeyRef:
+                  name: elastic-secret
                   key: password
             - name: TMFORUM_URL
               value: https://dome-dev.eng.it/tmf-api
             - name: BAE_URL
-              value: https://dome-marketplace.org
+              value: https://dome-marketplace-sbx.org
             - name: LOG_LEVEL
               value: DEBUG
           livenessProbe:
