@@ -30,9 +30,15 @@ spec:
             - name: network.host
               value: "0.0.0.0"
             - name: ELASTIC_USERNAME
-              value: elastic
+              valueFrom:
+                configMapKeyRef:
+                  name: elastic-mapconfig
+                  key: username
             - name: ELASTIC_PASSWORD
-              value: dome_2024!
+              valueFrom:
+                configMapKeyRef:
+                  name: elastic-mapconfig
+                  key: password
             - name: TMFORUM_URL
               value: https://dome-dev.eng.it/tmf-api
             - name: BAE_URL
